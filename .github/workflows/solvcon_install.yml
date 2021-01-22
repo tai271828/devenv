@@ -24,19 +24,10 @@ jobs:
             python3-numpy libpython3.6-dev python3-boto python3-paramiko graphviz
       - name: main build
         run: |
-          # the trick to mimic user git clone in a specific folder
+          # the trick to mimic user git clone in a specific folder so
+          # SOLVCON_WORKING_ROOT will be consistent
           mkdir -p ${HOME}/solvcon
           ln -s ${GITHUB_WORKSPACE} ${HOME}/solvcon/devenv
-
-          pwd
-          echo "show GITHUB_WORKSPACE"
-          ls ${GITHUB_WORKSPACE}
-          echo "...show solvcon sub-folder"
-          ls ${HOME}/solvcon
-          echo "...show devenv link"
-          ls -alh ${HOME}/solvcon/devenv
-          echo "...finally show the equivlant folder"
-          ls ${HOME}/solvcon/devenv
 
           ${GITHUB_WORKSPACE}/devenv-cli.sh
 
