@@ -10,6 +10,8 @@ syncgit https://gitlab.onelab.info/gmsh/ ${pkgname} ${pkgbranch}
 
 pushd ${DEVENVROOT}/flavors/${DEVENVFLAVOR}/src/${pkgfull} > /dev/null
 
+  git checkout gmsh_3_0_6
+
   mkdir -p build
 
   cd build
