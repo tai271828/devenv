@@ -11,6 +11,11 @@ syncgit https://github.com/solvcon ${application_name} ${application_branch}
 pushd ${DEVENVROOT}/flavors/${DEVENVFLAVOR}/src/${application_full} > /dev/null
 
   echo "launching solvcon..."
+  mkdir -p build
+
+  cd build
+
+  ${DEVENVROOT}/bin/build-application-solvcon-devenv.sh
 
 popd > /dev/null
 
