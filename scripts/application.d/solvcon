@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+application_name=solvcon
+application_branch=${VERSION:-master}
+application_full=$application_name-$application_branch
+
+syncgit https://github.com/solvcon ${application_name} ${application_branch}
+
+pushd ${DEVENVROOT}/flavors/${DEVENVFLAVOR}/src/${application_full} > /dev/null
+
+  echo "launching solvcon..."
+
+popd > /dev/null
+
+# vim: set et nobomb ft=bash ff=unix fenc=utf8:
